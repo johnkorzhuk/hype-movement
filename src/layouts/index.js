@@ -4,28 +4,20 @@ import Helmet from 'react-helmet';
 import styled from 'styled-components';
 
 import Container from '../components/Container';
-import Nav from '../components/Nav';
 import InstagramLink from '../components/links/Instagram';
 import BuyNow from '../components/links/BuyNow';
-
 import HypeLogo from '../components/logos/Hype';
+import Hero from '../components/Hero';
 
 import bgImage from '../assets/img/bg.jpg';
 
 import './index.css';
 
-const Hero = styled.div`
-  background: url(${bgImage}) no-repeat;
-  background-size: cover;
-  background-position: 40% 75%;
-  position: relative;
-  height: 700px;
-`;
-
 const Foot = styled.footer`
   position: relative;
   display: flex;
   align-items: center;
+  background-color: #3c3c3c;
   background: url(${bgImage}) no-repeat;
   background-size: cover;
   background-position: 40% 10%;
@@ -63,13 +55,7 @@ const InstagramLinkText = styled.span`
   text-transform: uppercase;
 `;
 
-const Header = () => (
-  <Hero>
-    <Container>
-      <Nav />
-    </Container>
-  </Hero>
-);
+const Header = () => <Hero />;
 
 const Footer = () => (
   <Foot>
