@@ -12,12 +12,17 @@ import shirt3 from '../assets/img/Shirt-3.png';
 import shoe1 from '../assets/img/Shoe-1.png';
 import shoe2 from '../assets/img/Shoe-2.png';
 
-const getShirtTopPos = pos => {
+const getItemTopPos = (type, pos) => {
   switch (pos) {
     case 0:
-      return 170;
+      if (type === 'shirt') return 170;
+      else if (type === 'shoe') return 280;
+      break;
     case 1:
-      return 80;
+      if (type === 'shirt') return 80;
+      else if (type === 'shoe') return 200;
+      break;
+
     case 2:
       return 15;
     default:
@@ -25,12 +30,18 @@ const getShirtTopPos = pos => {
   }
 };
 
-const getShirtLeftXPos = pos => {
+const getItemLeftXPos = (type, pos) => {
   switch (pos) {
     case 0:
-      return -60;
+      if (type === 'shirt') return -60;
+      else if (type === 'shoe') return -110;
+      break;
+
     case 1:
-      return 0;
+      if (type === 'shirt') return 0;
+      else if (type === 'shoe') return 100;
+      break;
+
     case 2:
       return 55;
     default:
@@ -47,7 +58,7 @@ const MainContainer = styled.div`
   height: 800px;
 `;
 
-const ShirtContainer = styled.div`
+const ItemContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
@@ -56,22 +67,35 @@ const ShirtContainer = styled.div`
 
 const Shirt = styled.img`
   position: absolute;
-  top: ${({ pos }) => `${getShirtTopPos(pos)}px`};
+  top: ${({ pos }) => `${getItemTopPos('shirt', pos)}px`};
   left: 50%;
   height: ${({ large }) => (large ? '70vw' : '60vw')};
   max-height: ${({ large }) => (large ? '420px' : '350px;')};
-  transform: ${({ pos }) => `translateX(calc(-50% + ${getShirtLeftXPos(pos)}%));`};
+  transform: ${({ pos }) =>
+    `translateX(calc(-50% + ${getItemLeftXPos('shirt', pos)}%));`};
+`;
+
+const Shoe = styled.img`
+  z-index: 10;
+  position: absolute;
+  top: ${({ pos }) => `${getItemTopPos('shoe', pos)}px`};
+  left: 50%;
+  height: ${({ large }) => (large ? '50vw' : '36vw')};
+  max-height: ${({ large }) => (large ? '300px' : '240px;')};
+  transform: ${({ pos }) => `translateX(calc(-50% + ${getItemLeftXPos('shoe', pos)}%));`};
 `;
 
 const Hero = () => (
   <MainContainer>
     <Container>
       <Nav />
-      <ShirtContainer>
+      <ItemContainer>
+        <Shoe src={shoe1} alt="Black shoe" pos={0} />
+        <Shoe src={shoe2} alt="Black shoe" pos={1} />
         <Shirt src={shirt1} alt="Grey Ultra shirt" pos={0} />
         <Shirt src={shirt2} alt="Black Ultra shirt" pos={1} large />
         <Shirt src={shirt3} alt="Light Grey Ultra shirt" pos={2} />
-      </ShirtContainer>
+      </ItemContainer>
     </Container>
   </MainContainer>
 );
