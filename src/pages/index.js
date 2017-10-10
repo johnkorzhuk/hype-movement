@@ -43,6 +43,7 @@ const ReserveContainer = Container.extend`
 
 const About = Container.withComponent('section').extend`
   position: relative;
+  max-width: 800px;
   text-align: center;
   padding-top: 0;
   margin-top: -50px;
@@ -92,8 +93,9 @@ const LargePhoto = styled.img`
   display: none;
   margin: 0;
   padding-bottom: 18px;
+  padding-left: ${({ leftPad }) => (leftPad ? '20px' : 0)};
   height: 100%;
-  width: ${({ full, width }) => (full ? '100%' : width || 'auto')};
+  width: ${({ full, half }) => (full ? '100%' : half ? '50%' : 'auto')};
 
   @media (min-width: 600px) {
     display: inline-block;
@@ -108,8 +110,8 @@ const StyledInstagramLink = styled(InstagramLink)`
   @media (min-width: 955px) {
     width: auto;
     position: absolute;
-    right: 100px;
-    bottom: 55px;
+    right: 155px;
+    bottom: 80px;
   }
 `;
 
@@ -152,8 +154,9 @@ const IndexPage = () => (
         <SmallPhoto src={Dave1Small} alt="Dave wearing Hype clothing" />
 
         <LargePhoto src={Ted1Large} alt="Ted wearing Hype clothing" full />
-        <LargePhoto src={Luke1Large} alt="Luke wearing Hype clothing" width="450" />
-        <LargePhoto src={Dave1Large} alt="Dave wearing Hype clothing" width="450" />
+
+        <LargePhoto src={Luke1Large} alt="Luke wearing Hype clothing" half />
+        <LargePhoto src={Dave1Large} alt="Dave wearing Hype clothing" half leftPad />
 
         <StyledInstagramLink color="#7b7166">
           <InstagramLinkContent>

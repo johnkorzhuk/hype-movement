@@ -34,14 +34,14 @@ const Reserve = ({ text }) => (
           <mask id="b" fill="#fff">
             <use xlinkHref="#a" />
           </mask>
-          <use fill="#7B7166" xlinkHref="#a" />
+          <use fill="#BBBBBB" xlinkHref="#a" />
           <path
             d="M329 70.0343043v-69.875h-56.589719c-16.209886 16.2098863-39.501553 39.501553-69.875 69.875H329z"
             fill="#3C3C3C"
             mask="url(#b)"
           />
           <path
-            fill="#BBB"
+            fill="#937758"
             mask="url(#b)"
             d="M204.5.1312968l59.5 70.115729H-.25V.131297"
           />
