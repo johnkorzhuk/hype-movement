@@ -1,5 +1,5 @@
 import React from 'react';
-// import Link from 'gatsby-link';
+import Link from 'gatsby-link';
 import styled from 'styled-components';
 
 import Container from '../components/Container';
@@ -110,7 +110,7 @@ const StyledInstagramLink = styled(InstagramLink)`
   @media (min-width: 955px) {
     width: auto;
     position: absolute;
-    right: 155px;
+    right: 140px;
     bottom: 80px;
   }
 `;

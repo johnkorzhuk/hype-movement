@@ -6,7 +6,7 @@ const Svg = styled.svg`
   transform: ${({ rotation }) => `rotate(${rotation}deg)`};
 `;
 
-const Polygon1 = ({ color, rotation = 0, blur = 0, width, height, ...props }) => (
+const Polygon2 = ({ color, rotation = 0, blur = 0, width, height, ...props }) => (
   <Svg
     width={width}
     height={height}
@@ -16,26 +16,26 @@ const Polygon1 = ({ color, rotation = 0, blur = 0, width, height, ...props }) =>
     {...props}>
     <defs>
       <filter
-        x="-28.6%"
-        y="-16.4%"
-        width="157.1%"
-        height="132.9%"
+        x="-17.6%"
+        y="-7.9%"
+        width="135.3%"
+        height="115.8%"
         filterUnits="objectBoundingBox"
-        id="a11z">
+        id="a22z">
         <feGaussianBlur stdDeviation={blur} in="SourceGraphic" />
       </filter>
     </defs>
     <path
-      filter="url(#a11z)"
-      d="M125 226.976752L167 256l-10.687535-29.023248L167 183"
-      transform="translate(-117 -175)"
+      filter="url(#a22z)"
+      transform="rotate(-105 199.403 260.52)"
+      d="M477 172l17-10.288661V134"
       fill={color}
       fillRule="evenodd"
     />
   </Svg>
 );
 
-Polygon1.propTypes = {
+Polygon2.propTypes = {
   color: PropTypes.string.isRequired,
   rotation: PropTypes.number,
   blur: PropTypes.number,
@@ -43,4 +43,4 @@ Polygon1.propTypes = {
   height: PropTypes.number.isRequired
 };
 
-export default Polygon1;
+export default Polygon2;
