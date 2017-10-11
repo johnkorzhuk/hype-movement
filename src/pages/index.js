@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 // import Link from 'gatsby-link';
 import styled from 'styled-components';
+import { Animate } from 'react-move';
 
 import Hero from '../components/Hero';
 import Container from '../components/Container';
@@ -136,49 +137,91 @@ const InstagramLinkContent = styled.div`
   }
 `;
 
-const IndexPage = () => (
-  <div>
-    <Hero />
-    <Main>
-      <Skewed />
-      <ReserveContainer>
-        <Reserve text="RESERVE YOURS" />
-      </ReserveContainer>
+class IndexPage extends Component {
+  state = {
+    hovered: false
+  };
 
-      <About>
-        <HypeLogo color="#3C3C3C" />
-        <p>
-          Welcome to The HYPE Movement. If you enjoy Adidas sneakerss as much as we do
-          You’re at the right place at the right time! We will soon be launching our
-          limited ULTRA shirts. They come in three colors & multiple sizes. Order yours
-          today and lets get the HYPE going!
-        </p>
-      </About>
+  handleMouseIn = () => {
+    this.setState({
+      hovered: true
+    });
+  };
 
-      <Supply>
-        <h3>Check out our supply</h3>
-        <Arrows color="#7B7166" />
+  handleMouseOut = () => {
+    this.setState({
+      hovered: false
+    });
+  };
 
-        <PhotoContainer>
-          <SmallPhoto src={Ted1Small} alt="Ted wearing Hype clothing" />
-          <SmallPhoto src={Luke1Small} alt="Luke wearing Hype clothing" />
-          <SmallPhoto src={Dave1Small} alt="Dave wearing Hype clothing" />
+  render() {
+    const { hovered } = this.state;
+    return (
+      <div>
+        <Hero />
+        <Main>
+          <Skewed />
+          <ReserveContainer>
+            <Reserve text="RESERVE YOURS" />
+          </ReserveContainer>
 
-          <LargePhoto src={Ted1Large} alt="Ted wearing Hype clothing" full />
+          <About>
+            <HypeLogo color="#3C3C3C" />
+            <p>
+              Welcome to The HYPE Movement. If you enjoy Adidas sneakerss as much as we do
+              You’re at the right place at the right time! We will soon be launching our
+              limited ULTRA shirts. They come in three colors & multiple sizes. Order
+              yours today and lets get the HYPE going!
+            </p>
+          </About>
 
-          <LargePhoto src={Luke1Large} alt="Luke wearing Hype clothing" half />
-          <LargePhoto src={Dave1Large} alt="Dave wearing Hype clothing" half leftPad />
+          <Supply>
+            <h3>Check out our supply</h3>
+            <Arrows color="#7B7166" />
 
-          <StyledInstagramLink color="#7b7166">
-            <InstagramLinkContent>
-              <span>peep the gram</span>
-              <Arrows color="#7B7166" orientation="right" />
-            </InstagramLinkContent>
-          </StyledInstagramLink>
-        </PhotoContainer>
-      </Supply>
-    </Main>
-  </div>
-);
+            <PhotoContainer>
+              <SmallPhoto src={Ted1Small} alt="Ted wearing Hype clothing" />
+              <SmallPhoto src={Luke1Small} alt="Luke wearing Hype clothing" />
+              <SmallPhoto src={Dave1Small} alt="Dave wearing Hype clothing" />
+
+              <LargePhoto src={Ted1Large} alt="Ted wearing Hype clothing" full />
+
+              <LargePhoto src={Luke1Large} alt="Luke wearing Hype clothing" half />
+              <LargePhoto
+                src={Dave1Large}
+                alt="Dave wearing Hype clothing"
+                half
+                leftPad
+              />
+
+              <StyledInstagramLink color="#7b7166">
+                <Animate
+                  duration={500}
+                  data={{
+                    arrowPos: hovered ? 10 : 0
+                  }}>
+                  {data => (
+                    <InstagramLinkContent
+                      onMouseEnter={this.handleMouseIn}
+                      onMouseLeave={this.handleMouseOut}>
+                      <span>peep the gram</span>
+                      <Arrows
+                        color="#7B7166"
+                        orientation="right"
+                        style={{
+                          left: data.arrowPos
+                        }}
+                      />
+                    </InstagramLinkContent>
+                  )}
+                </Animate>
+              </StyledInstagramLink>
+            </PhotoContainer>
+          </Supply>
+        </Main>
+      </div>
+    );
+  }
+}
 
 export default IndexPage;

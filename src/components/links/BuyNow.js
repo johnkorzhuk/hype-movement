@@ -46,33 +46,32 @@ class BuyNow extends Component {
 
     return (
       <Animate
+        duration={500}
         data={{
           bgc: hovered ? '#fff' : 'transparent',
           color: hovered ? '#3C3C3C' : '#fff',
           arrowPos: hovered ? 10 : 0
         }}>
-        {data => {
-          return (
-            <Container
-              href="#"
+        {data => (
+          <Container
+            href="#"
+            style={{
+              backgroundColor: data.bgc,
+              color: data.color
+            }}
+            {...this.props}
+            onMouseEnter={this.handleMouseIn}
+            onMouseLeave={this.handleMouseOut}>
+            Buy Now
+            <Arrows
+              color={data.color}
+              orientation="right"
               style={{
-                backgroundColor: data.bgc,
-                color: data.color
+                left: data.arrowPos
               }}
-              {...this.props}
-              onMouseEnter={this.handleMouseIn}
-              onMouseLeave={this.handleMouseOut}>
-              Buy Now
-              <Arrows
-                color={data.color}
-                orientation="right"
-                style={{
-                  left: data.arrowPos
-                }}
-              />
-            </Container>
-          );
-        }}
+            />
+          </Container>
+        )}
       </Animate>
     );
   }
