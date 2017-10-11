@@ -139,7 +139,24 @@ const InstagramLinkContent = styled.div`
 
 class IndexPage extends Component {
   state = {
-    hovered: false
+    hovered: false,
+    scrollY: 0
+  };
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = e => {
+    // console.log(e);
+    // console.log(document.querySelector('#js-hero').scrollY);
+    this.setState({
+      scrollY: window.scrollY
+    });
   };
 
   handleMouseIn = () => {
@@ -155,10 +172,10 @@ class IndexPage extends Component {
   };
 
   render() {
-    const { hovered } = this.state;
+    const { hovered, scrollY } = this.state;
     return (
       <div>
-        <Hero />
+        <Hero scrollY={scrollY} />
         <Main>
           <Skewed />
           <ReserveContainer>

@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const Svg = styled.svg`
   transform: ${({ rotation }) => `rotate(${rotation}deg)`};
-  opacity: 0.6;
 `;
 
 const Polygon3 = ({ color, rotation = 0, blur = 0, width, height, ...props }) => (

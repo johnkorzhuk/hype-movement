@@ -22,6 +22,7 @@ const Container = styled.a`
   font-weight: 400;
   letter-spacing: 1.62px;
   font-size: 16px;
+  z-index: 30;
 `;
 
 class BuyNow extends Component {
