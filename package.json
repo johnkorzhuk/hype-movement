@@ -9,7 +9,9 @@
     "gatsby-link": "^1.6.17",
     "gatsby-plugin-react-helmet": "^1.0.5",
     "gatsby-plugin-styled-components": "^1.0.5",
-    "styled-components": "^2.2.1"
+    "gatsby-plugin-typography": "^1.7.10",
+    "styled-components": "^2.2.1",
+    "typography-theme-sutro": "^0.15.10"
   },
   "keywords": [
     "gatsby"

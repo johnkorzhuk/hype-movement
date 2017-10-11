@@ -1,7 +1,8 @@
 import React from 'react';
-import Link from 'gatsby-link';
+// import Link from 'gatsby-link';
 import styled from 'styled-components';
 
+import Hero from '../components/Hero';
 import Container from '../components/Container';
 import Reserve from '../components/links/Reserve';
 import InstagramLink from '../components/links/Instagram';
@@ -47,6 +48,7 @@ const About = Container.withComponent('section').extend`
   text-align: center;
   padding-top: 0;
   margin-top: -50px;
+
   & p {
     margin-top: 30px;
     color: #3C3C3C;
@@ -84,6 +86,7 @@ const PhotoContainer = styled.div`
 const SmallPhoto = styled.img`
   margin: 0;
   padding-bottom: 18px;
+
   @media (min-width: 600px) {
     display: none;
   }
@@ -128,45 +131,48 @@ const InstagramLinkContent = styled.div`
 `;
 
 const IndexPage = () => (
-  <Main>
-    <Skewed />
-    <ReserveContainer>
-      <Reserve text="RESERVE YOURS" />
-    </ReserveContainer>
+  <div>
+    <Hero />
+    <Main>
+      <Skewed />
+      <ReserveContainer>
+        <Reserve text="RESERVE YOURS" />
+      </ReserveContainer>
 
-    <About>
-      <HypeLogo color="#3C3C3C" />
-      <p>
-        Welcome to The HYPE Movement. If you enjoy Adidas sneakerss as much as we do
-        You’re at the right place at the right time! We will soon be launching our limited
-        ULTRA shirts. They come in three colors & multiple sizes. Order yours today and
-        lets get the HYPE going!
-      </p>
-    </About>
+      <About>
+        <HypeLogo color="#3C3C3C" />
+        <p>
+          Welcome to The HYPE Movement. If you enjoy Adidas sneakerss as much as we do
+          You’re at the right place at the right time! We will soon be launching our
+          limited ULTRA shirts. They come in three colors & multiple sizes. Order yours
+          today and lets get the HYPE going!
+        </p>
+      </About>
 
-    <Supply>
-      <h3>Check out our supply</h3>
-      <Arrows color="#7B7166" />
+      <Supply>
+        <h3>Check out our supply</h3>
+        <Arrows color="#7B7166" />
 
-      <PhotoContainer>
-        <SmallPhoto src={Ted1Small} alt="Ted wearing Hype clothing" />
-        <SmallPhoto src={Luke1Small} alt="Luke wearing Hype clothing" />
-        <SmallPhoto src={Dave1Small} alt="Dave wearing Hype clothing" />
+        <PhotoContainer>
+          <SmallPhoto src={Ted1Small} alt="Ted wearing Hype clothing" />
+          <SmallPhoto src={Luke1Small} alt="Luke wearing Hype clothing" />
+          <SmallPhoto src={Dave1Small} alt="Dave wearing Hype clothing" />
 
-        <LargePhoto src={Ted1Large} alt="Ted wearing Hype clothing" full />
+          <LargePhoto src={Ted1Large} alt="Ted wearing Hype clothing" full />
 
-        <LargePhoto src={Luke1Large} alt="Luke wearing Hype clothing" half />
-        <LargePhoto src={Dave1Large} alt="Dave wearing Hype clothing" half leftPad />
+          <LargePhoto src={Luke1Large} alt="Luke wearing Hype clothing" half />
+          <LargePhoto src={Dave1Large} alt="Dave wearing Hype clothing" half leftPad />
 
-        <StyledInstagramLink color="#7b7166">
-          <InstagramLinkContent>
-            <span>peep the gram</span>
-            <Arrows color="#7B7166" orientation="right" />
-          </InstagramLinkContent>
-        </StyledInstagramLink>
-      </PhotoContainer>
-    </Supply>
-  </Main>
+          <StyledInstagramLink color="#7b7166">
+            <InstagramLinkContent>
+              <span>peep the gram</span>
+              <Arrows color="#7B7166" orientation="right" />
+            </InstagramLinkContent>
+          </StyledInstagramLink>
+        </PhotoContainer>
+      </Supply>
+    </Main>
+  </div>
 );
 
 export default IndexPage;

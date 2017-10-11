@@ -55,8 +55,6 @@ const InstagramLinkText = styled.span`
   text-transform: uppercase;
 `;
 
-const Header = () => <Hero />;
-
 const Footer = () => (
   <Foot>
     <FooterContainer>
@@ -84,7 +82,6 @@ const TemplateWrapper = ({ children }) => (
         { name: 'keywords', content: 'The Hype Movement, Hype Movement' }
       ]}
     />
-    <Header />
     {children()}
     <Footer />
   </div>

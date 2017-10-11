@@ -24,7 +24,7 @@
     }
   },
   "settings": {
-    "import/core-modules": ["react", "config", "prop-types", "react-helmet"]
+    "import/core-modules": ["react", "config", "prop-types", "react-helmet", "typography"]
   },
   "env": {
     "es6": true,
