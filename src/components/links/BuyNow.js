@@ -16,7 +16,11 @@ const Container = styled.a`
   text-align: center;
   color: white;
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: none !important;
+  font-family: Avenir, open-sans;
+  font-weight: 400;
+  letter-spacing: 1.62px;
+  font-size: 16px;
 `;
 
 const BuyNow = props => (

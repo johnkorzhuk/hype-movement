@@ -8,7 +8,10 @@ const Container = styled.a`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  text-decoration: none;
+  text-decoration: none !important;
+  font-family: avenir, open-sans;
+  padding-top: 3px;
+  letter-spacing: 1px;
 `;
 
 const InstagramLink = ({

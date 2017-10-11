@@ -179,7 +179,7 @@ const Hero = () => (
         width={170}
         height={170}
         blur={2}
-        top={-10}
+        top={-7}
         left={70}
         rotation={300}
         zIndex={16}

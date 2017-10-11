@@ -47,13 +47,13 @@ const Reserve = ({ text }) => (
           />
         </g>
         <text
-          fontFamily="Avenir-Black, Avenir"
+          fontFamily="Avenir, open-sans"
           fontSize="14"
           fontWeight="700"
           letterSpacing="1.75"
           fill="#FFF">
           <tspan x="43" y="41">
-            RESERVE YOURS
+            {text}
           </tspan>
         </text>
       </g>

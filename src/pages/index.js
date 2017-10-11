@@ -50,6 +50,8 @@ const About = Container.withComponent('section').extend`
   margin-top: -50px;
 
   & p {
+    font-size: 14px;
+    font-family: avenir, open-sans;
     margin-top: 30px;
     color: #3C3C3C;
   }
@@ -61,6 +63,9 @@ const Supply = Container.withComponent('section').extend`
   text-transform: uppercase;
 
   & h3 {
+    font-family: avenir, open-sans;
+    font-size: 1rem;
+    letter-spacing: 1px;
     color: #7B7166;
     margin-bottom: 10px;
   }
@@ -125,7 +130,8 @@ const InstagramLinkContent = styled.div`
   color: #7b7166;
 
   & span {
-    padding: 0 30px 0 10px;
+    font-weight: 500;
+    padding: 3px 30px 0 10px;
     text-transform: uppercase;
   }
 `;
