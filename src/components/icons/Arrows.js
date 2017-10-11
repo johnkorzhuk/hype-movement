@@ -18,6 +18,7 @@ const getAngle = orientation => {
 
 const Container = styled.svg`
   transform: rotate(${({ orientation }) => getAngle(orientation)}deg);
+  position: relative;
 `;
 
 const Arrows = ({ color, orientation = 0, ...props }) => (

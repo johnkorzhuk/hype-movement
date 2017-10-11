@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Animate } from 'react-move';
 
 import Arrows from '../icons/Arrows';
 
 const Container = styled.a`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 2px 25px;
   border: 1px solid white;
@@ -23,11 +24,58 @@ const Container = styled.a`
   font-size: 16px;
 `;
 
-const BuyNow = props => (
-  <Container href="#" {...props}>
-    Buy Now
-    <Arrows color="#fff" orientation="right" />
-  </Container>
-);
+class BuyNow extends Component {
+  state = {
+    hovered: false
+  };
+
+  handleMouseIn = () => {
+    this.setState({
+      hovered: true
+    });
+  };
+
+  handleMouseOut = () => {
+    this.setState({
+      hovered: false
+    });
+  };
+
+  render() {
+    const { hovered } = this.state;
+
+    return (
+      <Animate
+        data={{
+          bgc: hovered ? '#fff' : 'transparent',
+          color: hovered ? '#3C3C3C' : '#fff',
+          arrowPos: hovered ? 10 : 0
+        }}>
+        {data => {
+          return (
+            <Container
+              href="#"
+              style={{
+                backgroundColor: data.bgc,
+                color: data.color
+              }}
+              {...this.props}
+              onMouseEnter={this.handleMouseIn}
+              onMouseLeave={this.handleMouseOut}>
+              Buy Now
+              <Arrows
+                color={data.color}
+                orientation="right"
+                style={{
+                  left: data.arrowPos
+                }}
+              />
+            </Container>
+          );
+        }}
+      </Animate>
+    );
+  }
+}
 
 export default BuyNow;
