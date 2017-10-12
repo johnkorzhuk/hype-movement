@@ -87,7 +87,6 @@ const TemplateWrapper = ({ children }) => (
       <link rel="apple-touch-icon" sizes="180x180" href={appleTouch} />
       <link rel="icon" type="image/png" sizes="32x32" href={fav32} />
       <link rel="icon" type="image/png" sizes="16x16" href={fav16} />
-      <link rel="manifest" href={manifest} />
       <meta name="theme-color" content="#ffffff" />
     </Helmet>
     {children()}
