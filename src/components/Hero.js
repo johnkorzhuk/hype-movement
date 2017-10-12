@@ -15,24 +15,6 @@ import Poly1 from './icons/Polygon1';
 import Poly2 from './icons/Polygon2';
 import Poly3 from './icons/Polygon3';
 
-const getItemTopPos = (type, pos) => {
-  switch (pos) {
-    case 0:
-      if (type === 'shirt') return 170;
-      else if (type === 'shoe') return 280;
-      break;
-    case 1:
-      if (type === 'shirt') return 80;
-      else if (type === 'shoe') return 200;
-      break;
-
-    case 2:
-      return 15;
-    default:
-      break;
-  }
-};
-
 const getItemLeftXPos = (type, pos) => {
   switch (pos) {
     case 0:
@@ -58,7 +40,7 @@ const MainContainer = styled.div`
   background-size: cover;
   background-position: 40% 75%;
   position: relative;
-  height: 750px;
+  height: 800px;
 `;
 
 const ItemContainer = styled.div`
@@ -129,7 +111,7 @@ const Hero = ({ scrollY, ...props }) => (
         zIndex={10}
         ratation={0}
         style={{
-          top: `calc(20% - ${scrollY / 1.2}px)`
+          top: `calc(25% - ${scrollY / 1.2}px)`
         }}
       />
 
@@ -142,7 +124,7 @@ const Hero = ({ scrollY, ...props }) => (
         rotation={100}
         zIndex={0}
         style={{
-          top: `calc(70% - ${scrollY * 1.5}px)`
+          top: `calc(75% - ${scrollY * 1.5}px)`
         }}
       />
 
@@ -155,7 +137,7 @@ const Hero = ({ scrollY, ...props }) => (
         rotation={200}
         zIndex={11}
         style={{
-          top: `calc(10% - ${scrollY / 2}px)`
+          top: `calc(15% - ${scrollY / 2}px)`
         }}
       />
 
@@ -168,7 +150,7 @@ const Hero = ({ scrollY, ...props }) => (
         rotation={0}
         zIndex={16}
         style={{
-          top: `calc(15% - ${scrollY / 3}px)`
+          top: `calc(20% - ${scrollY / 3}px)`
         }}
       />
 
@@ -181,7 +163,7 @@ const Hero = ({ scrollY, ...props }) => (
         rotation={20}
         zIndex={0}
         style={{
-          top: `calc(73% - ${scrollY * 3}px)`
+          top: `calc(78% - ${scrollY * 3}px)`
         }}
       />
 
@@ -194,7 +176,7 @@ const Hero = ({ scrollY, ...props }) => (
         rotation={300}
         zIndex={16}
         style={{
-          top: `calc(-15% - ${scrollY / 3}px)`
+          top: `calc(-10% - ${scrollY / 3}px)`
         }}
       />
 
@@ -207,7 +189,7 @@ const Hero = ({ scrollY, ...props }) => (
         rotation={300}
         zIndex={12}
         style={{
-          top: `calc(65% - ${scrollY * 2.2}px)`
+          top: `calc(70% - ${scrollY * 2.2}px)`
         }}
       />
 
@@ -220,7 +202,7 @@ const Hero = ({ scrollY, ...props }) => (
         rotation={200}
         zIndex={0}
         style={{
-          top: `calc(80% - ${scrollY * 1.3}px)`
+          top: `calc(85% - ${scrollY * 1.3}px)`
         }}
       />
     </PolyContainer>
@@ -232,7 +214,7 @@ const Hero = ({ scrollY, ...props }) => (
           alt="Black shoe"
           pos={0}
           style={{
-            top: `${280 - scrollY / 3}px`
+            top: `${320 - scrollY / 3}px`
           }}
         />
         <Shoe
@@ -240,7 +222,7 @@ const Hero = ({ scrollY, ...props }) => (
           alt="Black shoe"
           pos={1}
           style={{
-            top: `${200 - scrollY / 10}px`
+            top: `${220 - scrollY / 10}px`
           }}
         />
         <Shirt
@@ -248,7 +230,7 @@ const Hero = ({ scrollY, ...props }) => (
           alt="Grey Ultra shirt"
           pos={0}
           style={{
-            top: `${100 - scrollY / 20}px`
+            top: `${190 - scrollY / 20}px`
           }}
         />
         <Shirt
@@ -257,7 +239,7 @@ const Hero = ({ scrollY, ...props }) => (
           pos={1}
           large
           style={{
-            top: `${10 - scrollY / 5}px`
+            top: `${70 - scrollY / 5}px`
           }}
         />
         <Shirt
@@ -265,7 +247,7 @@ const Hero = ({ scrollY, ...props }) => (
           alt="Light Grey Ultra shirt"
           pos={2}
           style={{
-            top: `${-30 - scrollY / 5}px`
+            top: `${10 - scrollY / 5}px`
           }}
         />
       </ItemContainer>

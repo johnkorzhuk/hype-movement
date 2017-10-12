@@ -156,11 +156,10 @@ class IndexPage extends Component {
 
   handleScroll = () => {
     const { skew } = this.state;
+    this.setState({
+      scrollY: window.scrollY
+    });
     if (window.scrollY - this.hero.offsetHeight < -241) {
-      this.setState({
-        scrollY: window.scrollY
-      });
-
       if (skew > 0 && skew < 1) {
         this.setState({
           skew: 0
