@@ -23,7 +23,6 @@ const Skewed = styled.div`
   width: 100%;
   height: 100%;
   top: -150px;
-  transform: skewY(-9deg);
   background: #fff;
 `;
 
@@ -140,23 +139,36 @@ const InstagramLinkContent = styled.div`
 class IndexPage extends Component {
   state = {
     hovered: false,
-    scrollY: 0
+    scrollY: 0,
+    skew: -8
   };
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
+    this.setState({
+      skew: (window.scrollY - this.hero.offsetHeight) / 100
+    });
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
   }
 
-  handleScroll = e => {
-    // console.log(e);
-    // console.log(document.querySelector('#js-hero').scrollY);
+  handleScroll = () => {
+    const { skew } = this.state;
     this.setState({
       scrollY: window.scrollY
     });
+
+    if (skew > 0 && skew < 1) {
+      this.setState({
+        skew: 0
+      });
+    } else {
+      this.setState({
+        skew: (window.scrollY - this.hero.offsetHeight) / 100
+      });
+    }
   };
 
   handleMouseIn = () => {
@@ -172,12 +184,24 @@ class IndexPage extends Component {
   };
 
   render() {
-    const { hovered, scrollY } = this.state;
+    const { hovered, scrollY, skew } = this.state;
     return (
       <div>
-        <Hero scrollY={scrollY} />
+        <Hero
+          scrollY={scrollY}
+          innerRef={node => {
+            this.hero = node;
+          }}
+        />
         <Main>
-          <Skewed />
+          <Skewed
+            innerRef={node => {
+              this.skewed = node;
+            }}
+            style={{
+              transform: `skewY(${skew}deg)`
+            }}
+          />
           <ReserveContainer>
             <Reserve text="RESERVE YOURS" />
           </ReserveContainer>

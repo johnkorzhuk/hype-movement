@@ -58,7 +58,7 @@ const MainContainer = styled.div`
   background-size: cover;
   background-position: 40% 75%;
   position: relative;
-  height: 800px;
+  height: 750px;
 `;
 
 const ItemContainer = styled.div`
@@ -71,23 +71,25 @@ const ItemContainer = styled.div`
 const Shirt = styled.img`
   position: absolute;
   z-index: ${({ pos }) => pos + 10};
-  top: ${({ pos }) => `${getItemTopPos('shirt', pos)}px`};
   left: 50%;
   height: ${({ large }) => (large ? '70vw' : '60vw')};
   max-height: ${({ large }) => (large ? '420px' : '350px;')};
   transform: ${({ pos }) =>
     `translateX(calc(-50% + ${getItemLeftXPos('shirt', pos)}%));`};
 `;
+// top: ${({ pos }) => `${getItemTopPos('shirt', pos)}px`};
 
 const Shoe = styled.img`
+  transform-origin: center;
   z-index: 14;
   position: absolute;
-  top: ${({ pos }) => `${getItemTopPos('shoe', pos)}px`};
   left: 50%;
   height: ${({ large }) => (large ? '50vw' : '36vw')};
   max-height: ${({ large }) => (large ? '300px' : '240px')};
   transform: ${({ pos }) => `translateX(calc(-50% + ${getItemLeftXPos('shoe', pos)}%));`};
 `;
+
+// top: ${({ pos }) => `${getItemTopPos('shoe', pos)}px`};
 
 const PolyContainer = styled.div`
   width: 100%;
@@ -138,7 +140,7 @@ const Hero = ({ scrollY, ...props }) => (
         blur={1}
         left={55}
         rotation={100}
-        zIndex={12}
+        zIndex={0}
         style={{
           top: `calc(70% - ${scrollY * 1.5}px)`
         }}
@@ -192,7 +194,7 @@ const Hero = ({ scrollY, ...props }) => (
         rotation={300}
         zIndex={16}
         style={{
-          top: `calc(-7% - ${scrollY / 3}px)`
+          top: `calc(-15% - ${scrollY / 3}px)`
         }}
       />
 
@@ -225,11 +227,47 @@ const Hero = ({ scrollY, ...props }) => (
     <Container>
       <Nav />
       <ItemContainer>
-        <Shoe src={shoe1} alt="Black shoe" pos={0} />
-        <Shoe src={shoe2} alt="Black shoe" pos={1} />
-        <Shirt src={shirt1} alt="Grey Ultra shirt" pos={0} />
-        <Shirt src={shirt2} alt="Black Ultra shirt" pos={1} large />
-        <Shirt src={shirt3} alt="Light Grey Ultra shirt" pos={2} />
+        <Shoe
+          src={shoe1}
+          alt="Black shoe"
+          pos={0}
+          style={{
+            top: `${280 - scrollY / 3}px`
+          }}
+        />
+        <Shoe
+          src={shoe2}
+          alt="Black shoe"
+          pos={1}
+          style={{
+            top: `${200 - scrollY / 10}px`
+          }}
+        />
+        <Shirt
+          src={shirt1}
+          alt="Grey Ultra shirt"
+          pos={0}
+          style={{
+            top: `${100 - scrollY / 20}px`
+          }}
+        />
+        <Shirt
+          src={shirt2}
+          alt="Black Ultra shirt"
+          pos={1}
+          large
+          style={{
+            top: `${10 - scrollY / 5}px`
+          }}
+        />
+        <Shirt
+          src={shirt3}
+          alt="Light Grey Ultra shirt"
+          pos={2}
+          style={{
+            top: `${-30 - scrollY / 5}px`
+          }}
+        />
       </ItemContainer>
     </Container>
   </MainContainer>
