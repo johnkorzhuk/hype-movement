@@ -156,18 +156,20 @@ class IndexPage extends Component {
 
   handleScroll = () => {
     const { skew } = this.state;
-    this.setState({
-      scrollY: window.scrollY
-    });
+    if (window.scrollY - this.hero.offsetHeight < -241) {
+      this.setState({
+        scrollY: window.scrollY
+      });
 
-    if (skew > 0 && skew < 1) {
-      this.setState({
-        skew: 0
-      });
-    } else {
-      this.setState({
-        skew: (window.scrollY - this.hero.offsetHeight) / 100
-      });
+      if (skew > 0 && skew < 1) {
+        this.setState({
+          skew: 0
+        });
+      } else {
+        this.setState({
+          skew: (window.scrollY - this.hero.offsetHeight) / 100
+        });
+      }
     }
   };
 
@@ -185,6 +187,7 @@ class IndexPage extends Component {
 
   render() {
     const { hovered, scrollY, skew } = this.state;
+
     return (
       <div>
         <Hero
