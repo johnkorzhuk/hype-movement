@@ -80,8 +80,27 @@ const TemplateWrapper = ({ children }) => (
       meta={[
         { name: 'description', content: 'The Hype Movement' },
         { name: 'keywords', content: 'The Hype Movement, Hype Movement' }
-      ]}
-    />
+      ]}>
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href={`${__PATH_PREFIX__}/apple-touch-icon.png`}
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href={`${__PATH_PREFIX__}/favicon-32x32.png`}
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href={`${__PATH_PREFIX__}/favicon-16x16.png`}
+      />
+      <link rel="manifest" href={`${__PATH_PREFIX__}/manifest.json`} />
+      <meta name="theme-color" content="#ffffff" />
+    </Helmet>
     {children()}
     <Footer />
   </div>

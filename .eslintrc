@@ -26,6 +26,9 @@
   "settings": {
     "import/core-modules": ["react", "config", "prop-types", "react-helmet", "typography"]
   },
+  "globals": {
+    "__PATH_PREFIX__": true
+  },
   "env": {
     "es6": true,
     "browser": true,
