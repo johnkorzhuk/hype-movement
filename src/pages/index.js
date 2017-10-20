@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 // import Link from 'gatsby-link';
-import styled from 'styled-components';
-import { Animate } from 'react-move';
+import styled from "styled-components";
+import { Animate } from "react-move";
 
-import Hero from '../components/Hero';
-import Container from '../components/Container';
-import Reserve from '../components/links/Reserve';
-import InstagramLink from '../components/links/Instagram';
-import HypeLogo from '../components/logos/Hype';
+import Hero from "../components/Hero";
+import Container from "../components/Container";
+import Reserve from "../components/links/Reserve";
+import InstagramLink from "../components/links/Instagram";
+import HypeLogo from "../components/logos/Hype";
 
-import Arrows from '../components/icons/Arrows';
+import Arrows from "../components/icons/Arrows";
 
-import Ted1Small from '../assets/img/Ted1Small.jpg';
-import Ted1Large from '../assets/img/Ted1Large.jpg';
-import Luke1Small from '../assets/img/Luke1Small.jpg';
-import Luke1Large from '../assets/img/Luke1Large.jpg';
-import Dave1Small from '../assets/img/Dave1Small.jpg';
-import Dave1Large from '../assets/img/Dave1Large.jpg';
+import Ted1Small from "../assets/img/Ted1Small.jpg";
+import Ted1Large from "../assets/img/Ted1Large.jpg";
+import Luke1Small from "../assets/img/Luke1Small.jpg";
+import Luke1Large from "../assets/img/Luke1Large.jpg";
+import Dave1Small from "../assets/img/Dave1Small.jpg";
+import Dave1Large from "../assets/img/Dave1Large.jpg";
 
 const Skewed = styled.div`
   position: absolute;
@@ -42,7 +42,7 @@ const ReserveContainer = Container.extend`
   }
 `;
 
-const About = Container.withComponent('section').extend`
+const About = Container.withComponent("section").extend`
   position: relative;
   max-width: 800px;
   text-align: center;
@@ -57,7 +57,7 @@ const About = Container.withComponent('section').extend`
   }
 `;
 
-const Supply = Container.withComponent('section').extend`
+const Supply = Container.withComponent("section").extend`
   position: relative;
   text-align: center;
   text-transform: uppercase;
@@ -101,9 +101,9 @@ const LargePhoto = styled.img`
   display: none;
   margin: 0;
   padding-bottom: 18px;
-  padding-left: ${({ leftPad }) => (leftPad ? '20px' : 0)};
+  padding-left: ${({ leftPad }) => (leftPad ? "20px" : 0)};
   height: 100%;
-  width: ${({ full, half }) => (full ? '100%' : half ? '50%' : 'auto')};
+  width: ${({ full, half }) => (full ? "100%" : half ? "50%" : "auto")};
 
   @media (min-width: 600px) {
     display: inline-block;
@@ -144,14 +144,14 @@ class IndexPage extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
     this.setState({
       skew: (window.scrollY - this.hero.offsetHeight) / 100
     });
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll);
   }
 
   handleScroll = () => {
@@ -211,10 +211,13 @@ class IndexPage extends Component {
           <About>
             <HypeLogo color="#3C3C3C" />
             <p>
-              Welcome to The HYPE Movement. If you enjoy Adidas sneakerss as much as we do
-              You’re at the right place at the right time! We will soon be launching our
-              limited ULTRA shirts. They come in three colors & multiple sizes. Order
-              yours today and lets get the HYPE going!
+              The Hype Movement is a streetwear brand created for the hype
+              beasts and the sneaker enthusiasts. For the ones that live for
+              hype. We wanted to bring this culture into our apparel where the
+              hype isn’t only around the sneakers, but in the clothes as well.
+              To curate designs specific for certain sneaker releases and to
+              provide our customers with the current trends in the streetwear
+              community.
             </p>
           </About>
 
@@ -227,9 +230,17 @@ class IndexPage extends Component {
               <SmallPhoto src={Luke1Small} alt="Luke wearing Hype clothing" />
               <SmallPhoto src={Dave1Small} alt="Dave wearing Hype clothing" />
 
-              <LargePhoto src={Ted1Large} alt="Ted wearing Hype clothing" full />
+              <LargePhoto
+                src={Ted1Large}
+                alt="Ted wearing Hype clothing"
+                full
+              />
 
-              <LargePhoto src={Luke1Large} alt="Luke wearing Hype clothing" half />
+              <LargePhoto
+                src={Luke1Large}
+                alt="Luke wearing Hype clothing"
+                half
+              />
               <LargePhoto
                 src={Dave1Large}
                 alt="Dave wearing Hype clothing"
@@ -242,11 +253,13 @@ class IndexPage extends Component {
                   duration={500}
                   data={{
                     arrowPos: hovered ? 10 : 0
-                  }}>
+                  }}
+                >
                   {data => (
                     <InstagramLinkContent
                       onMouseEnter={this.handleMouseIn}
-                      onMouseLeave={this.handleMouseOut}>
+                      onMouseLeave={this.handleMouseOut}
+                    >
                       <span>peep the gram</span>
                       <Arrows
                         color="#7B7166"

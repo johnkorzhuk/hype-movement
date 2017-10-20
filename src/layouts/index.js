@@ -1,20 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import styled from 'styled-components';
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import styled from "styled-components";
 
-import Container from '../components/Container';
-import InstagramLink from '../components/links/Instagram';
-import BuyNow from '../components/links/BuyNow';
-import HypeLogo from '../components/logos/Hype';
+import Container from "../components/Container";
+import InstagramLink from "../components/links/Instagram";
+import BuyNow from "../components/links/BuyNow";
+import HypeLogo from "../components/logos/Hype";
 
-import bgImage from '../assets/img/bg.jpg';
-import appleTouch from '../assets/fav/apple-touch-icon.png';
-import fav32 from '../assets/fav/favicon-32x32.png';
-import fav16 from '../assets/fav/favicon-16x16.png';
-import manifest from '../assets/fav/manifest.json';
+import bgImage from "../assets/img/bg.jpg";
+import appleTouch from "../assets/fav/apple-touch-icon.png";
+import fav32 from "../assets/fav/favicon-32x32.png";
+import fav16 from "../assets/fav/favicon-16x16.png";
 
-import './index.css';
+import "./index.css";
 
 const Foot = styled.footer`
   position: relative;
@@ -81,9 +80,10 @@ const TemplateWrapper = ({ children }) => (
     <Helmet
       title="The Hype Movement"
       meta={[
-        { name: 'description', content: 'The Hype Movement' },
-        { name: 'keywords', content: 'The Hype Movement, Hype Movement' }
-      ]}>
+        { name: "description", content: "The Hype Movement" },
+        { name: "keywords", content: "The Hype Movement, Hype Movement" }
+      ]}
+    >
       <link rel="apple-touch-icon" sizes="180x180" href={appleTouch} />
       <link rel="icon" type="image/png" sizes="32x32" href={fav32} />
       <link rel="icon" type="image/png" sizes="16x16" href={fav16} />
