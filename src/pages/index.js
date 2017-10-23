@@ -205,7 +205,7 @@ class IndexPage extends Component {
             }}
           />
           <ReserveContainer>
-            <Reserve text="RESERVE YOURS" />
+            <Reserve text="BUY NOW" />
           </ReserveContainer>
 
           <About>

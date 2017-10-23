@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 // import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { Animate } from 'react-move';
+import styled from "styled-components";
+import { Animate } from "react-move";
 
-import Arrows from '../icons/Arrows';
+import Arrows from "../icons/Arrows";
 
 const Container = styled.a`
   display: flex;
@@ -49,21 +49,23 @@ class BuyNow extends Component {
       <Animate
         duration={500}
         data={{
-          bgc: hovered ? '#fff' : 'transparent',
-          color: hovered ? '#3C3C3C' : '#fff',
+          bgc: hovered ? "#fff" : "transparent",
+          color: hovered ? "#3C3C3C" : "#fff",
           arrowPos: hovered ? 10 : 0
-        }}>
+        }}
+      >
         {data => (
           <Container
-            href="#"
+            href="https://www.hypemvmt.com/collections/all"
             style={{
               backgroundColor: data.bgc,
               color: data.color
             }}
             {...this.props}
             onMouseEnter={this.handleMouseIn}
-            onMouseLeave={this.handleMouseOut}>
-            Buy Now
+            onMouseLeave={this.handleMouseOut}
+          >
+            Shop
             <Arrows
               color={data.color}
               orientation="right"

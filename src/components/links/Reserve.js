@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { Animate } from 'react-move';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { Animate } from "react-move";
 
-import Arrows from '../icons/Arrows';
+import Arrows from "../icons/Arrows";
 
-const Container = styled.div`
+const Container = styled.a`
   position: relative;
   cursor: pointer;
   box-shadow: 0px 10px 45px 2px rgba(0, 0, 0, 0.15);
@@ -48,18 +48,24 @@ class Reserve extends Component {
       <Animate
         duration={500}
         data={{
-          pimaryColor: hovered ? '#BBBBBB' : '#937758',
-          secondaryColor: hovered ? '#937758' : '#BBBBBB',
+          pimaryColor: hovered ? "#BBBBBB" : "#937758",
+          secondaryColor: hovered ? "#937758" : "#BBBBBB",
           arrowPos: hovered ? 23 : 33
-        }}>
+        }}
+      >
         {data => (
-          <Container onMouseEnter={this.handleMouseIn} onMouseLeave={this.handleMouseOut}>
+          <Container
+            href="https://www.hypemvmt.com/products/ultra-boost-t-shirt"
+            onMouseEnter={this.handleMouseIn}
+            onMouseLeave={this.handleMouseOut}
+          >
             <svg
               width="329"
               height="70"
               viewBox="0 0 329 70"
               xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink">
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+            >
               <defs>
                 <path id="a" d="M0 0h329v70H0z" />
               </defs>
@@ -85,8 +91,9 @@ class Reserve extends Component {
                   fontSize="14"
                   fontWeight="700"
                   letterSpacing="1.75"
-                  fill="#FFF">
-                  <tspan x="43" y="41">
+                  fill="#FFF"
+                >
+                  <tspan x="73" y="41">
                     {text}
                   </tspan>
                 </text>
